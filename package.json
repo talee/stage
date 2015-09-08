@@ -1,0 +1,29 @@
+{
+  "name": "stage",
+  "version": "1.0.0",
+  "description": "Control content on external monitor",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talee/stage.git"
+  },
+  "keywords": [
+    "polymer",
+    "external",
+    "monitor",
+    "control",
+    "packaged",
+    "app",
+    "chrome"
+  ],
+  "author": "Thomas Lee <tleehoc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/talee/stage/issues"
+  },
+  "homepage": "https://github.com/talee/stage#readme",
+  "devDependencies": {}
+}
