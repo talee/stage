@@ -10,7 +10,10 @@
   "icons": {
   },
 
-  "permissions": ["app.window.alwaysOnTop"],
+  "permissions": [
+	  "app.window.alwaysOnTop",
+	  "system.display"
+  ],
 
   "app": {
     "background": {

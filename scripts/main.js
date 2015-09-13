@@ -8,11 +8,18 @@
         id: 'displayWindow',
         alwaysOnTop: true,
         frame: 'none',
-        state: 'fullscreen',
+        focused: false,
+        hidden: true,
+        resizable: false,
+        state: 'maximized',
         visibleOnAllWorkspaces: true
       },
       function(displayWindow) {
-
+        displayWindow.contentWindow.addEventListener('load', function(){
+          displayWindow.outerBounds.left = 1930;
+          displayWindow.maximize();
+          displayWindow.show(false);
+        });
     });
   };
 })();
