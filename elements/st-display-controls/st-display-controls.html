@@ -1,0 +1,19 @@
+<dom-module id="st-display-controls">
+  <template>
+    <paper-button toggles id="displayToggle" on-click="toggleDisplay">
+      Show
+    </paper-button>
+  </template>
+  <script src="display-controller.js"></script>
+  <script>
+    (function() {
+      'use strict';
+      Polymer(
+        Object.assign({
+          is: 'st-display-controls'
+        },
+        DisplayController.prototype)
+      );
+    })();
+  </script>
+</dom-module>

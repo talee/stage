@@ -8,6 +8,8 @@
   <link rel="import" href="bower_components/paper-styles/paper-styles.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
 
+  <link rel="import" href="elements/st-display-controls/st-display-controls.html">
+
   <link rel="import" href="styles/shared-styles.html">
   <style is="custom-style" include="shared-styles"></style>
 </head>
@@ -15,11 +17,7 @@
 <body class="fullbleed">
   <h1 class="layout vertical center">Stage</h1>
   <section>
-    <template id="controls" is="dom-bind">
-      <paper-button id="show" raised right on-click="showDisplay">
-        Show
-      </paper-button>
-    </template>
+    <st-display-controls></st-display-controls>
   </section>
 
   <script src="scripts/main.js"></script>
