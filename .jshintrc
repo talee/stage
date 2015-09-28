@@ -1,5 +1,7 @@
 {
+	"esnext": true,
 	"globals": {
 		"browser": "true"
-	}
+	},
+	"-W067": false
 }
