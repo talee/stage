@@ -16,6 +16,15 @@
     },
 
     /**
+     * Polymer lifecycle callback before created().
+     */
+    ready() {
+      // Merges text nodes to allow changing of button text w/o affecting
+      // descendants
+      this.$.displayToggle.normalize();
+    },
+
+    /**
      * Preemptively creates a display window and moves it to an external display
      * if one exists. Effectively the constructor in Polymer.
      */
@@ -98,12 +107,11 @@
     _toggleDisplayAndText: function(button) {
       // Hide current display window if it's showing
       if (this._displayWindow) {
-        if(this._isShowingDisplay) {
+        if (this._isShowingDisplay) {
           this._displayWindow.hide();
           this._isShowingDisplay = false;
-          // Setting textContent on paper-button directly is bugged so find it
-          // Note: might be bugged only for shady DOM
-          button.$$('.content').textContent = 'Show';
+          // NOTE: Potentially fragile use of paper-button
+          button.firstChild.data = 'Show';
         } else {
           // Query for external monitor each time before showing in case
           // existing monitor is disabled or not available
@@ -111,7 +119,7 @@
           .then(() => {
             this._moveToExternalDisplay(true);
             this._isShowingDisplay = true;
-            button.$$('.content').textContent = 'Stop';
+            button.firstChild.data = 'Stop';
           });
         }
       }
